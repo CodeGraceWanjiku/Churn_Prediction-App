@@ -5,4 +5,4 @@ st.set_page_config(
     page_icon="	:small_red_triangle:",
     layout="wide"
 )
-st.title("Predictions)")
+st.title("Predictions")
