@@ -9,22 +9,22 @@ st.set_page_config(
 )
 
 st.title("Dashboards")
+st.write("This are the EDAs")
 
 df = pd.read_csv("customer_churn.csv")
 df = pd.DataFrame(df)
-st.dataframe(df) 
-st.bar_chart(data=df, use_container_width=True)
 
-col1, col2, col3 = st.columns(3)
+data = pd.DataFrame(
+    np.random.randn(20, 2),
+    columns= ["Churn","Gender"],
+)
+
+col1, col2 = st.columns(2)
 
 with col1:
    st.header("Bar Chart")
-   st.bar_chart(data=df, x="Churn", y="Gender", color="Blue",use_container_width=True)
+   st.bar_chart(data)
 
 with col2:
-   st.header("Linkedin Link")
-   st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/",label="Linkedin")
-
-with col3:
-   st.header("Medium Link")
-   st.page_link("https://medium.com/@grakashi",label="Medium")
+   st.header("Pie Chart")
+   st.bar_chart(data)
