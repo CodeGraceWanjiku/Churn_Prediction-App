@@ -12,10 +12,10 @@ st.image('images/churn.jpeg', caption='Churn rate')
 st.button("Login")
 st.text_input("Enter your name")
 
-add_selectbox = st.sidebar.selectbox(
-    "Contacts",
-    ("Email", "Home phone", "Mobile phone")
-)
+#add_selectbox = st.sidebar.selectbox(
+    #"Contacts",
+    #("Email", "Home phone", "Mobile phone")
+#)
 
 
 st.subheader("More Information")

@@ -7,9 +7,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Vodafone's Data(A Telecommunications Company)")
+st.title("Vodafone's Data(A Telecommunications Company)📈")
 
-df = pd.read_csv("customer_churn.csv")
+df = pd.read_csv("data/df_concat.csv")
 df = pd.DataFrame(df)
 st.dataframe(df) 
-#st.connection(name, type=None, max_entries=None, ttl=None, **kwargs)

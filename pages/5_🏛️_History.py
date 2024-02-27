@@ -6,4 +6,4 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("History")
+st.title("History 🏛️")

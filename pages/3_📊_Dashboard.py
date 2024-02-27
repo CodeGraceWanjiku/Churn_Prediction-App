@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.set_page_config(
     page_title= "Dashboards",
@@ -8,23 +10,35 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Dashboards")
-st.write("This are the EDAs")
+st.title("Dashboards 📊 & 📈")
+st.write("Welcome to the dashboard page")
+# function to read the csv file
 
-df = pd.read_csv("customer_churn.csv")
-df = pd.DataFrame(df)
+df = pd.read_csv("data/df_concat.csv")
+
 
 data = pd.DataFrame(
     np.random.randn(20, 2),
     columns= ["Churn","Gender"],
 )
 
-col1, col2 = st.columns(2)
+tab1, tab2 = st.tabs(["📈 EDA", "🗃 KPI"])
+data = np.random.randn(10, 1)
 
-with col1:
-   st.header("Bar Chart")
-   st.bar_chart(data)
+tab1.subheader("Distribution of Target Variable (Churn)")
+#tab1.line_chart(data)
+fig, ax = plt.subplots()
+sns.countplot(x='Churn', data=df, palette='viridis', ax=ax)
+st.pyplot(fig)
 
-with col2:
-   st.header("Pie Chart")
-   st.bar_chart(data)
+# Plot pie chart for Internet Service category
+for service_type in df['InternetService'].unique():
+        fig, ax = plt.subplots()
+        churn_counts = df[df['InternetService'] == service_type]['Churn'].value_counts()
+        churn_counts.plot.pie(labels=churn_counts.index, autopct='%1.1f%%', startangle=90, colors=['#ff9999', '#66b3ff'], ax=ax)
+        ax.set_title(f'Churn Distribution for {service_type}')
+        st.pyplot(fig)
+
+
+tab2.subheader("A tab with the data")
+
