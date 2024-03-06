@@ -27,6 +27,7 @@ data = np.random.randn(10, 1)
 
 tab1.subheader("Distribution of Target Variable (Churn)")
 #tab1.line_chart(data)
+countplot,hist,b = st.columns(3)
 fig, ax = plt.subplots()
 sns.countplot(x='Churn', data=df, palette='viridis', ax=ax)
 st.pyplot(fig)
