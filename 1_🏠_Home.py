@@ -13,15 +13,21 @@ st.set_page_config(
 )
 st.title("👋 Welcome to Churn Prediction App")
 
-# with open('./config.yaml') as file:
-#     config = yaml.load(file, Loader=SafeLoader)
-
-with open('config.yaml', 'r') as file:
-    config = yaml.safe_load(file)
+st.image("./images/churn.jpg")
+with open('./config.yaml') as file:
+    config = yaml.load(file, Loader=SafeLoader)
 
 
-authenticator = Authenticate(config['credentials'],config['cookie_name'],config['cookie_key'], config['cookie_expiry_days'], config['preauthorized'])
-name, authentication_status, username = authenticator.login(location='sidebar')
+authenticator = stauth.Authenticate(
+    config['credentials'],
+    config['cookie']['name'],
+    config['cookie']['key'],
+    config['cookie']['expiry_days'],
+    config['preauthorized']
+)
+
+
+name, authentication_status, usernames = authenticator.login(location='sidebar')
 
 
 if st.session_state["authentication_status"]:
@@ -50,8 +56,7 @@ elif st.session_state["authentication_status"] is None:
             Password: wanjiku123""")
 
 
-
-
-# st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/", label="Linkedin", icon="🌐")
-# st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/", label="Medium", icon="✍")
-# st.link_button("Github", "https://github.com/CodeGraceWanjiku/Churn_Prediction-App")
+with st.expander("click here to find more information"):
+    st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/", label="Linkedin", icon="🌐")
+    st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/", label="Medium", icon="✍")
+    st.page_link("https://github.com/CodeGraceWanjiku/Churn_Prediction-App", label="Github", icon="🏞️")
