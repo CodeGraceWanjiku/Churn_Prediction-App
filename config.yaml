@@ -1,0 +1,16 @@
+credentials:
+usernames:
+    shix:
+      email: wanjiku.grace9@gmail.com
+      logged_in: False # Will be managed automatically
+      name: grace w
+      password: 'wanjiku123' # To be replaced with hashed password
+cookie:
+  expiry_days: 0
+  key: key # Must be string
+  name: name
+preauthorized:
+  emails: 
+  - wanjiku.grace9@gmail.com
+users: 
+  

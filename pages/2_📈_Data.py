@@ -11,44 +11,33 @@ st.set_page_config(
 
 st.title("Vodafone's Data(A Telecommunications Company)📈")
 
+churn_data = pd.read_csv("data/df_concat.csv")
+churn_data = churn_data.drop(['Unnamed: 0','customerID'],axis=1)
+churn_data
+def show_numeric_features(churn_data):
+    numeric_features = churn_data.select_dtypes(include='number').columns
+    st.write("Numeric Features:")
+    for feature in numeric_features:
+        st.write(f"- {feature}")
 
-@st.cache_resource(show_spinner='connecting to database')
-def init_connection():
-    connection = pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};SERVER="
-        + st.secrets["SERVER"]
-        + ";DATABASE="
-        + st.secrets["DATABASE"]
-        + ";UID="
-        + st.secrets["USERNAME"]
-        + ";PWD="
-        + st.secrets["PASSWORD"]
+def show_categorical_features(churn_data):
+    categorical_features = churn_data.select_dtypes(include='object').columns
+    st.write("Categorical Features:")
+    for feature in categorical_features:
+        st.write(f"- {feature}")
+
+def main():
+    churn_data = pd.read_csv("data/df_concat.csv")
+    churn_data = churn_data.drop(['Unnamed: 0','customerID'],axis=1)
+    options = st.selectbox(
+        'Choose the dataset the features to work with',
+        ['Numeric Features', 'Categorical Features']
     )
-    return connection
 
-conn = init_connection()
-# Perform query.
-# Uses st.cache_data to only rerun when the query changes or after 10 min.
-@st.cache_data()
-def run_query(query):
-    with conn.cursor() as cur:
-        cur.execute(query)
-        rows = cur.fetchall()
-        
-        df = pd.DataFrame.from_records(data=rows,columns =[column[0]for column in cur.description])
+    if options == 'Numeric Features':
+        show_numeric_features(churn_data)
+    elif options == 'Categorical Features':
+        show_categorical_features(churn_data)
 
-    return df
-
-def churn_first_3000():
-    query = run_query("SELECT * dbo.LP2_Telco_churn_first_3000;")
-    df = st.write(run_query(query))
-
-    return df
-
-if __name__ == '__main__':
-    st.selectbox("select features",options=["All numeric","Numeric"])
-    churn_first_3000()
-    
-# Print results.
-#for row in rows:
-#    st.write(f"{row[0]} has a :{row[1]}:")
+if __name__ == "__main__":
+    main()

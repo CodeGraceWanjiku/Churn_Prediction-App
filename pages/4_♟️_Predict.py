@@ -40,7 +40,7 @@ def choose_model():
     else:
            pipeline =load_naives_pipeline()
 
-    encoder =joblib.load('./models/encoder.joblib')
+    encoder =joblib.load('./models/encoderl.joblib')
 
     return pipeline,encoder
 
@@ -88,9 +88,12 @@ def make_prediction(pipeline,encoder):
                streaming_movies,contract,paperlessbiling,payment_method,monthly_income,total_charges]]
      # create a dataframe
      df = pd.DataFrame(data,columns= columns)
-     
+     # create a column to show the prediction time
      df['predicted time'] = datetime.date.today()
+     # create a column to show the prediction status
      df['Churn status'] = st.session_state['prediction']
+     # create a column to show the chosen model
+     df['Model'] = st.session_state['selected_model']
 
      #if not os.path.exists("./data/history.csv"):
           #os.makedirs("./data/history.csv")
@@ -98,21 +101,21 @@ def make_prediction(pipeline,encoder):
      df.to_csv("./data/history.csv",mode='a',header=not os.path.exists('./data/history.csv'),index=False)
      
      # make predictions
-     prediction = pipeline.predict(df)
+     pred = pipeline.predict(df)
      
-     prediction = prediction[0]
-     #prediction = encoder.inverse_transform(prediction)
+     pred =int(pred[0])
+     prediction = encoder.inverse_transform([pred])
      
      # Get probabilities
-     probability_proba = pipeline.predict_proba(df)
+     probability = pipeline.predict_proba(df)
 
      # updating state
      
      st.session_state['prediction'] = prediction
-     
-     st.session_state['probability'] =probability_proba
+     st.session_state['probability'] =probability
+     st.session_state['probability'] =probability
 
-     return prediction,probability_proba
+     return prediction
 
      # create a function to show the input features
 
@@ -167,13 +170,13 @@ if __name__ == "__main__" :
     probability = st.session_state['probability']
 
     if not prediction:
-         st.markdown('## predictions will show here' )
-    elif prediction == 1:
+         st.markdown('## You have not predicted yet')
+    elif prediction == 'Yes':
          probability_of_yes = probability[0][1] * 100
-         st.markdown(f'## Employee will leave the company with a probability of {probability_of_yes:.2f}%')
+         st.markdown(f'## Employee will churn -- probability {probability_of_yes:.2f}%')
     else:
          probability_of_no = probability[0][0] * 100
-         st.markdown(f'## Employee will not leave the company with a probaility of {probability_of_no:.2f}%')
+         st.markdown(f'## Employee will not churn -- probability {probability_of_no:.2f}%')
 
       
     st.write(st.session_state)
