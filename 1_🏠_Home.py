@@ -13,7 +13,7 @@ st.set_page_config(
 )
 st.title("👋 Welcome to Churn Prediction App")
 
-st.image("./images/churn.jpg")
+st.image("./assets/churn.jpg")
 with open('./config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
 

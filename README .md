@@ -1,7 +1,7 @@
-a name="readme-top"></a>
+<a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>Attrition Meter</b></h1>
+  <h1><b>Churn Prediction WebApp</b></h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -9,8 +9,8 @@ a name="readme-top"></a>
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [Attrition Meter ](#attrition-meter-)
-  - [🛠 Built With ](#-built-with-)
+- [Churn Prediction Streamlit WebApp ]
+  - [🛠 Built With ](#-built-with-Python)
     - [Tech Stack ](#tech-stack-)
   - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
@@ -27,24 +27,32 @@ a name="readme-top"></a>
 
 <!-- PROJECT DESCRIPTION -->
 
-# Attrition Meter <a name="about-project"></a>
+# Churn WebApp <a name="about-project"></a>
 
-**Attrition Meter** is a data application that allows users to interact with a machine learning model, view data visualizations on the data and see the values of their input saved for future use.
+**Churn WebApp** is a data application that allows users to interact with a machine learning model, view data visualizations on the data and see the values of their input saved for future use.
 
 Features
-1. **Age**: Age of employee
-2. **Attrition**: Employee attrition status
-3. **Department**: Department of work
-4. **DistanceFromHome**: what is their distance from hime
-5. **Education**: 1-Below College; 2- College; 3-Bachelor; 4-Master; 5-Doctor;
-6. **EducationField**: The field they studies in in the University
-7. **EnvironmentSatisfaction**: 1-Low; 2-Medium; 3-High; 4-Very High;
-8. **JobSatisfaction**: 1-Low; 2-Medium; 3-High; 4-Very High;
-9. **MaritalStatus**: Whether they are married, single or divorced
-10. **MonthlyIncome**: How much an employee makes a month
-11. **NumCompaniesWorked**: Number of companies worked prior to IBM
-12. **WorkLifeBalance**: 1-Bad; 2-Good; 3-Better; 4-Best;
-13. **YearsAtCompany**: Current years of service in IBM
+
+1. **gender**: gender of employee
+2. **churn**: Employee churn status
+3. **contract**: contract type
+4. **tenure**: what is their distance from hime
+5. **dependents**: Yes or No
+6. **Phone Service**: Whether the customer has a phone service or not (Yes, No)
+7. **Multiple Lines**: Whether the customer has multiple lines or not
+8. **Internet Service**: Customer's internet service provider (DSL, Fiber Optic, No)
+9. **OnlineSecurity**: Whether the customer has online security or not (Yes, No, No Internet)
+10. **OnlineBackup**: Whether the customer has online backup or not (Yes, No, No Internet
+11. **DeviceProtection**: Whether the customer has device protection or not (Yes, No, No internet service)
+12. **Techsupport**: Whether the customer has tech support or not (Yes, No, No internet)
+13.**StreamingTV**: Whether the customer has streaming TV or not (Yes, No, No internet service)
+14. **StreamingMovies**: Whether the customer has streaming movies or not (Yes, No, No Internet service)
+15. **PaperlessBilling**: Whether the customer has paperless billing or not (Yes, No)
+16. **Payment Method**: The customer's payment method (Electronic check, mailed check, Bank transfer(automatic), Credit card(automatic))
+17. **MonthlyCharges**: The amount charged to the customer monthly
+18. **TotalCharges**: The total amount charged to the customer
+19. **Churn**: Whether the customer churned or not (Yes or No)
+20. **SeniorCitizen**: Whether a customer is a senior citizen or not
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -115,13 +123,13 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/coderacheal/Attrition-Meter.git
+  git clone https://github.com/CodeGraceWanjiku/Churn_Prediction-StreamlitWebApp
 ```
 
 Change into the cloned repository
 
 ```sh
-  cd Attrition-Meter
+  cd churn_prediction_StreamlitWebApp
   
 ```
 
@@ -129,7 +137,7 @@ Create a virtual environment
 
 ```sh
 
-python -m venv env
+python -m venv virtual_env
 
 ```
 
@@ -160,7 +168,7 @@ To run the project, execute the following command:
 ```
 
 - A webpage opens up to view the app
-- Login to the app with `username=coderacheal` and `password:abc`
+- Login to the app with `username=shix` and `Wanjiku123`
 - Finally test a prediction by clicking on the predicitons page
 - **Note**: Users may not be able to access the View Data page as the secrets file is not checked into git
 
@@ -168,11 +176,11 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-🕵🏽‍♀️ **Racheal Appiah-kubi**
+🕵🏽‍♀️ **Grace Wanjiku-Wanjiru**
 
-- GitHub: [GitHub Profile](https://github.com/coderacheal)
-- Twitter: [Twitter Handle](https://twitter.com/racheal_kubi)
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/racheal-appiah-kubi/)
+- GitHub: [GitHub Profile](https://github.com/CodeGraceWanjiku)
+- Twitter: [Twitter Handle](https://twitter.com/shixay)
+- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/grace-w-wanjiru/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
