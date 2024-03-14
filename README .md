@@ -99,8 +99,7 @@ Features
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-![image](https://github.com/coderacheal/Attrition-Meter/assets/97846040/eb717bf3-d42b-4005-8080-276b69f08167)
-
+![image](https://raw.githubusercontent.com/CodeGraceWanjiku/Churn_Prediction-StreamlitWebApp/c225cac302fe431e7e6b0ec622b9cfc70d96ffba/assets/Screenshot%202024-03-11%20at%2020.45.54.png)
 
 <!-- GETTING STARTED -->
 
@@ -170,7 +169,7 @@ To run the project, execute the following command:
 - A webpage opens up to view the app
 - Login to the app with `username=shix` and `Wanjiku123`
 - Finally test a prediction by clicking on the predicitons page
-- **Note**: Users may not be able to access the View Data page as the secrets file is not checked into git
+- **Note**: Users may not be able to access the Data page as the secrets file is not checked into git
 
 <!-- AUTHORS -->
 
@@ -184,13 +183,12 @@ To run the project, execute the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
+<!-- PAGE SCREENSHOTS-->
 
-## 🔭 Future Features <a name="future-features"></a>
+## 🔭 Page Screenshots <a name="Page-Screenshots"></a>
 
-
-- **Add a front end application for users**
-  
+- **login**
+![image](https://raw.githubusercontent.com/CodeGraceWanjiku/Churn_Prediction-StreamlitWebApp/main/assets/Screenshot%202024-03-11%20at%2020.45.00.png)
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,11 +204,13 @@ Feel free to check the [issues page](../../issues/).
 
 <!-- SUPPORT -->
 
-## ⭐️ Show your support <a name="support"></a>
+## ⭐️ Live URL <a name="support"></a>
+
+This is the live url to the webApp
+
+<p align="left">(<a href="https://churn-prediction-streamlitwebapp.onrender.com/">Live link</a>)</p>
 
 If you like this project kindly show some love, give it a 🌟 **STAR** 🌟
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
 
