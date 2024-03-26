@@ -7,9 +7,10 @@
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
-
 - [📗 Table of Contents](#-table-of-contents)
-- [Churn Prediction Streamlit WebApp ]
+
+- [Churn Prediction Streamlit_WebApp]
+
   - [🛠 Built With ](#-built-with-Python)
     - [Tech Stack ](#tech-stack-)
   - [Key Features ](#key-features-)
@@ -20,7 +21,7 @@
     - [Usage](#usage)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
+  - [🤝 live Link ](#-live-link-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
@@ -42,7 +43,7 @@ Features
 7. **Multiple Lines**: Whether the customer has multiple lines or not
 8. **Internet Service**: Customer's internet service provider (DSL, Fiber Optic, No)
 9. **OnlineSecurity**: Whether the customer has online security or not (Yes, No, No Internet)
-10. **OnlineBackup**: Whether the customer has online backup or not (Yes, No, No Internet
+10. **OnlineBackup**: Whether the customer has online backup or not (Yes, No, No Internet)
 11. **DeviceProtection**: Whether the customer has device protection or not (Yes, No, No internet service)
 12. **Techsupport**: Whether the customer has tech support or not (Yes, No, No internet)
 13.**StreamingTV**: Whether the customer has streaming TV or not (Yes, No, No internet service)

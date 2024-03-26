@@ -56,7 +56,7 @@ elif st.session_state["authentication_status"] is None:
             Password: wanjiku123""")
 
 
-with st.expander("click here to find more information"):
+with st.expander("click here to find links to the project"):
     st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/", label="Linkedin", icon="🌐")
-    st.page_link("https://www.linkedin.com/in/grace-w-wanjiru/", label="Medium", icon="✍")
+    st.page_link("https://https://medium.com/@grakashi/", label="Medium", icon="✍")
     st.page_link("https://github.com/CodeGraceWanjiku/Churn_Prediction-App", label="Github", icon="🏞️")
